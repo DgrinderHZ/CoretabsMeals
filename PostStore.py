@@ -10,10 +10,7 @@ posts = []
 class PostStore:
     def get_all(self):
         # get all posts
-        for item in posts:
-            print(item.id, item.name, item.body)
-            print("_______________________________")
-
+        return posts
     def add(self, post):
         # append post 
         posts.append(post)
@@ -25,11 +22,7 @@ class PostStore:
             if item.id == id:
                 result = item
                 break
-        if result == None:
-            print("Post not found!")
-        else:
-            print(result.id, result.name, result.body)
-            print("_______________________________")
+        return result
 
     def update(self, id, photo_url, name, body):
        # update post data 
@@ -52,21 +45,4 @@ class PostStore:
             print("Post not found!")
         else:
             posts.remove(posts[result])
-
-store = PostStore()
-p1 = Post(1, "fghj", "Hassan", "okkkkkkkay")
-p2 = Post(2, "hdfsv", "Zekkouri", "hhhhhhhh ")
-p3 = Post(3, "bcvjkl", "Zeek Zone", "finaally")
-
-store.add(p1)
-store.add(p2)
-store.add(p3)
-print("Geting all:")
-store.get_all()
-print("Geting id = 3:")
-store.get_by_id(3)
-print("Edeting 1:")
-store.update(1, "none", "Hassan ZEKKOURI", "Thank you Coretabs!")
-print("Geting id = 1:")
-store.get_by_id(1)
 
