@@ -24,13 +24,13 @@ class PostStore:
                 break
         return result
 
-    def update(self, id, photo_url, name, body):
+    def update(self, id, fields):
        # update post data 
        for i in range(len(posts)):
             if posts[i].id == id:
-                posts[i].photo_url = photo_url
-                posts[i].name = name
-                posts[i].body = body
+                posts[i].photo_url = fields["photo_url"]
+                posts[i].name = fields["name"]
+                posts[i].body = fields["body"]
                 break
 
 
